@@ -1,0 +1,16 @@
+version: "3.5"
+
+services:
+  hive-metastore:
+    build: .
+    image: hive-metastore:latest
+    ports:
+      - 9083:9083
+    networks:
+      - hivenet
+
+
+networks:
+  hivenet:
+    name: hive_internal
+    external: true
